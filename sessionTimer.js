@@ -1,7 +1,7 @@
 //DSC NameSpace
-var DSC = DSC || {};
+var GR = GR || {};
 
-DSC.sessionTimer = function () {
+GR.sessionTimer = function () {
 
   //private variables
   var _countdownTimeout,
@@ -22,7 +22,7 @@ DSC.sessionTimer = function () {
 	  settings = $.extend({}, settings, options);
 
 	},
-    _doCountdown = function () {
+    _control = function () {
       //countdown to reminder
       if (_validateTimer()) {
         _countdown(settings.sessionTimeout - settings.reminderDisplay,
@@ -108,7 +108,7 @@ DSC.sessionTimer = function () {
   return {
     //public members
     init: _init,
-    doCountdown: _doCountdown,
+    doCountdown: _control,
     stop: _stop
   };
 } ();
